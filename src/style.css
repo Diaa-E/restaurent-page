@@ -43,6 +43,18 @@
     gap: 20px;
 }
 
+#tabContent{
+    grid-area:2/1/3/3;
+}
+
+#header{
+    grid-area: 1/1/2/3;
+}
+
+#testimonial{
+    grid-area: 3/1/4/3;
+}
+
 .header{
     background-color: var(--background-container);
     border-radius: 15px;

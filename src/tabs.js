@@ -23,3 +23,8 @@ export function createStory()
 
     return divStory;
 };
+
+export function createDishes()
+{
+    
+}
