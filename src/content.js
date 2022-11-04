@@ -90,3 +90,8 @@ export function createTestimonials()
 
     return divTestContainer
 };
+
+function switchTab(index)
+{
+    
+}
