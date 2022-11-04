@@ -1,24 +1,29 @@
 "use strict";
 
 import { createHeader, createTestimonials } from "./content";
-import { createStory } from "./tabs";
+import { createStory, createDishes } from "./tabs";
 
-const divContent = document.querySelector("#content");
+initPage();
 
-const divHeader = document.createElement("div");
-divHeader.setAttribute("id", "header");
-divHeader.append(createHeader());
+function initPage()
+{
+    const divContent = document.querySelector("#content");
 
-const divTabContent = document.createElement("div");
-divTabContent.setAttribute("id", "tabContent");
-divTabContent.append(createStory());
+    const divHeader = document.createElement("div");
+    divHeader.setAttribute("id", "header");
+    divHeader.append(createHeader());
 
-const divTestimonial = document.createElement("div");
-divTestimonial.setAttribute("id", "testimonial");
-divTestimonial.append(createTestimonials());
+    const divTabContent = document.createElement("div");
+    divTabContent.setAttribute("id", "tabContent");
+    divTabContent.append(createStory());
 
-divContent.append(
-    divHeader,
-    divTabContent,
-    divTestimonial,
-);
+    const divTestimonial = document.createElement("div");
+    divTestimonial.setAttribute("id", "testimonial");
+    divTestimonial.append(createTestimonials());
+
+    divContent.append(
+        divHeader,
+        divTabContent,
+        divTestimonial,
+    );
+}
