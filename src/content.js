@@ -5,6 +5,7 @@ import avatarDeadpool from "./images/deadpool.jpg";
 import avatarTerminator from "./images/t-800.jpg";
 import avatarShredder from "./images/shredder.jpg";
 
+import "./tabs";
 import "./style.css";
 
 export function createHeader()

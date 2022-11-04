@@ -35,7 +35,15 @@
     --font-bright: rgb(230, 225, 219);
 }
 
-body{
+/*body{
+    background-color: var(--background);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}*/
+
+#content{
     background-color: var(--background);
     padding: 10px;
     display: grid;
