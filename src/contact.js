@@ -9,50 +9,18 @@ export function createContact()
     formContact.setAttribute("action", "");
     formContact.setAttribute("method", "post");
 
-    const lblNameF = document.createElement("label");
-    lblNameF.setAttribute("for", "nameF");
-    lblNameF.innerText = "First Name";
+    const lblNameF = createLabel("nameF", "", "First Name");
+    const lblNameL = createLabel("nameL", "", "Last Name");
+    const lblPhone = createLabel("phone", "", "Phone Number");
+    const lblEmail = createLabel("email", "required", "Email");
+    const lblMsg = createLabel("message", "required", "Your Message");
 
-    const lblNameL = document.createElement("label");
-    lblNameL.setAttribute("for", "nameL");
-    lblNameL.innerText = "Last Name";
-
-    const lblPhone = document.createElement("label");
-    lblPhone.setAttribute("for", "phone");
-    lblPhone.innerText = "Phone Number";
-
-    const lblEmail = document.createElement("label");
-    lblEmail.setAttribute("for", "email");
-    lblEmail.classList.add("required");
-    lblEmail.innerText = "Email";
-
-    const lblMsg = document.createElement("label");
-    lblMsg.setAttribute("for", "message");
-    lblMsg.classList.add("required");
-    lblMsg.innerText = "Your Message";
-
-    const txtNameF = document.createElement("input");
-    txtNameF.setAttribute("type", "text");
-    txtNameF.setAttribute("id", "nameF");
-    txtNameF.setAttribute("name", "nameF");
+    const txtNameF = createInput("nameF", "nameF", "text", false);
+    const txtNameL = createInput("nameL", "nameL", "text", false);
+    const txtPhone = createInput("phone", "phone", "tel", false);
+    const txtEmail = createInput("email", "email", "email", true)
     txtNameF.setAttribute("minLength", "3");
-
-    const txtNameL = document.createElement("input");
-    txtNameL.setAttribute("type", "text");
-    txtNameL.setAttribute("id", "nameL");
-    txtNameL.setAttribute("name", "nameL");
     txtNameL.setAttribute("minLength", "3");
-
-    const txtPhone = document.createElement("input");
-    txtPhone.setAttribute("type", "tel");
-    txtPhone.setAttribute("name", "phone");
-    txtPhone.setAttribute("id", "phone");
-
-    const txtEmail = document.createElement("input");
-    txtEmail.setAttribute("type", "email");
-    txtEmail.setAttribute("name", "email");
-    txtEmail.setAttribute("id", "email");
-    txtEmail.setAttribute("required", "");
 
     const txtMsg = document.createElement("textarea");
     txtMsg.setAttribute("required", "");
@@ -83,4 +51,34 @@ export function createContact()
     divContact.append(formContact);
 
     return divContact;
+};
+
+function createLabel(isFor = "", labelClass = "", labelText = "")
+{
+    const lbl = document.createElement("label");
+    lbl.setAttribute("for", isFor);
+    lbl.innerText = labelText;
+
+    //class argument cannot be empty
+    if (labelClass !== "")
+    {
+        lbl.classList.add(labelClass);
+    }
+
+    return lbl;
+};
+
+function createInput(inputId = "", inputName = "", inputType = "text", isRequired = false)
+{
+    const input = document.createElement("input");
+    input.setAttribute("id", inputId);
+    input.setAttribute("name", inputName);
+    input.setAttribute("type", inputType);
+
+    if (isRequired)
+    {
+        input.setAttribute("required", "");
+    }
+
+    return input;
 };
