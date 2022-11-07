@@ -1,7 +1,7 @@
 "use strict";
 
 import { createHeader, createTestimonials } from "./content";
-import { createStory, createDishes } from "./tabs";
+import { createStory, createDishes, createContact } from "./tabs";
 
 initPage();
 
@@ -26,4 +26,34 @@ function initPage()
         divTabContent,
         divTestimonial,
     );
+
+    const tabButtons = document.querySelectorAll(".header> button");
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+
+            switchTab(+e.target.getAttribute("data-index"));
+
+        });
+    });
+};
+
+function switchTab(index)
+{
+    const div = document.querySelector("#tabContent");
+    div.innerHTML = "";
+
+    switch(index)
+    {
+        case 0:
+            div.append(createStory());
+            return;
+        case 1:
+            div.append(createDishes());
+            return
+        case 2:
+            div.append(createContact());
+            return
+    }
 }
+

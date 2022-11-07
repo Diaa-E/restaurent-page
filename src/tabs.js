@@ -66,6 +66,8 @@ export function createDishes()
 
     divDishImg.append(btnLeft, imgDish, btnRight);
     divDishes.append(pDish, divDishImg);
+
+    return divDishes;
 };
 
 export function createContact()
@@ -91,13 +93,13 @@ export function createContact()
 
     const lblEmail = document.createElement("label");
     lblEmail.setAttribute("for", "phone");
-    lblEmail.setAttribute("required", "");
+    lblEmail.classList.add("required");
     lblEmail.innerText = "Phone Number";
 
     const lblMsg = document.createElement("label");
     lblMsg.setAttribute("for", "message");
-    lblMsg.innerText = "Your Message";
     lblMsg.classList.add("required");
+    lblMsg.innerText = "Your Message";
 
     const txtNameF = document.createElement("input");
     txtNameF.setAttribute("type", "text");
@@ -130,11 +132,11 @@ export function createContact()
     txtMsg.setAttribute("rows", "10");
 
     const btnSubmit = document.createElement("button");
-    btnSubmit.classList,add("button", "button-empty");
+    btnSubmit.classList.add("button", "button-empty");
     btnSubmit.setAttribute("type", "submit");
     btnSubmit.innerText = "Send";
 
-    divContact.append(
+    formContact.append(
         lblNameF,
         txtNameF,
         lblNameL,
@@ -147,6 +149,10 @@ export function createContact()
         txtMsg,
         btnSubmit
     )
+
+    divContact.append(formContact);
+
+    return divContact;
 };
 
 function switchDish(img, p, direction)
