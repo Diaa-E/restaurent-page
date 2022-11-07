@@ -23,8 +23,10 @@ export function createDishes()
     btnLeft.setAttribute("data-direction", "-1");
     btnLeft.innerText = "<";
 
+    const imgDish = new Image();
+
     btnLeft.addEventListener("click", (e)=> {
-        switchDish(imgDish, pDish, e.target.getAttribute("data-direction"));
+        switchDish(imgDish, pDish, +e.target.getAttribute("data-direction"));
     });
 
     const btnRight = document.createElement("button");
@@ -33,10 +35,9 @@ export function createDishes()
     btnRight.innerText = ">";
 
     btnRight.addEventListener("click", (e)=> {
-        switchDish(imgDish, pDish, e.target.getAttribute("data-direction"));
+        switchDish(imgDish, pDish, +e.target.getAttribute("data-direction"));
     });
 
-    const imgDish = new Image();
 
     //initialize dish menu
     //0 is to avoid incrementing

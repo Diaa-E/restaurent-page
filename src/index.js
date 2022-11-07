@@ -1,10 +1,10 @@
 "use strict";
 
-import {createTestimonials } from "./testimonails";
+import { createTestimonials } from "./testimonails";
 import { createHeader } from "./header";
 import { createDishes } from "./dishes";
 import { createStory } from "./story";
-import {createContact} from "./contact";
+import { createContact } from "./contact";
 
 initPage();
 
