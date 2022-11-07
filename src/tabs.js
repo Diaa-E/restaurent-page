@@ -94,9 +94,9 @@ export function createContact()
     lblPhone.innerText = "Phone Number";
 
     const lblEmail = document.createElement("label");
-    lblEmail.setAttribute("for", "phone");
+    lblEmail.setAttribute("for", "email");
     lblEmail.classList.add("required");
-    lblEmail.innerText = "Phone Number";
+    lblEmail.innerText = "Email";
 
     const lblMsg = document.createElement("label");
     lblMsg.setAttribute("for", "message");
