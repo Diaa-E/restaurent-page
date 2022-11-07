@@ -32,13 +32,19 @@ function initPage()
     tabButtons.forEach(btn => {
         btn.addEventListener("click", (e) => {
 
+            tabButtons.forEach(button => {
+                button.classList.remove("active-tab");
+            });
+            
+            e.target.classList.add("active-tab");
+
             switchTab(+e.target.getAttribute("data-index"));
 
         });
     });
 };
 
-function switchTab(index)
+function switchTab(index, btnList)
 {
     const div = document.querySelector("#tabContent");
     div.innerHTML = "";

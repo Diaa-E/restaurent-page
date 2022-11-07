@@ -45,6 +45,7 @@ export function createDishes()
     const btnLeft = document.createElement("button");
     btnLeft.classList.add("button", "button-invis", "button-left");
     btnLeft.setAttribute("data-direction", "-1");
+    btnLeft.innerText = "<";
 
     btnLeft.addEventListener("click", (e)=> {
         switchDish(imgDish, pDish, e.target.getAttribute("data-direction"));
@@ -53,6 +54,7 @@ export function createDishes()
     const btnRight = document.createElement("button");
     btnRight.classList.add("button", "button-invis", "button-right");
     btnRight.setAttribute("data-direction", "1");
+    btnRight.innerText = ">";
 
     btnRight.addEventListener("click", (e)=> {
         switchDish(imgDish, pDish, e.target.getAttribute("data-direction"));
