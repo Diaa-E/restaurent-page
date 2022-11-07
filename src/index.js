@@ -1,7 +1,10 @@
 "use strict";
 
-import { createHeader, createTestimonials } from "./content";
-import { createStory, createDishes, createContact } from "./tabs";
+import {createTestimonials } from "./testimonails";
+import { createHeader } from "./header";
+import { createDishes } from "./dishes";
+import { createStory } from "./story";
+import {createContact} from "./contact";
 
 initPage();
 
@@ -35,7 +38,7 @@ function initPage()
             tabButtons.forEach(button => {
                 button.classList.remove("active-tab");
             });
-            
+
             e.target.classList.add("active-tab");
 
             switchTab(+e.target.getAttribute("data-index"));
